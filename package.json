@@ -1,0 +1,22 @@
+{
+  "name": "muslimbot",
+  "version": "1.0.0",
+  "description": "a messenger bot for muslim events",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "now": "now remove muslimbot --safe && now",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cron": "^1.5.0",
+    "express": "^4.16.4",
+    "moment": "^2.22.2",
+    "node-fetch": "^2.2.0",
+    "nodemailer": "^4.6.8",
+    "request": "^2.88.0"
+  }
+}

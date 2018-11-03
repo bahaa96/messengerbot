@@ -1,0 +1,7 @@
+{
+  "env": {
+    "PAGE_ACCESS_TOKEN": "@page-access-token",
+    "VERIFY_TOKEN": "@verify-token",
+    "AIRTABLE_API_KEY": "@airtable-api-token"
+  }
+}
