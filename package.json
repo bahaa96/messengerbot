@@ -2,10 +2,11 @@
   "name": "muslimbot",
   "version": "1.0.0",
   "description": "a messenger bot for muslim events",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./build/bundle.js",
     "now": "now remove muslimbot --safe && now",
+    "build": "webpack --config webpack.js -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +18,16 @@
     "moment": "^2.22.2",
     "node-fetch": "^2.2.0",
     "nodemailer": "^4.6.8",
+    "query-string": "^6.2.0",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }
