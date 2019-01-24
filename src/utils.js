@@ -19,3 +19,6 @@ export function getDisplayedDay(dateDeep) {
     return getDayName(date.getDay());
   }
 }
+
+
+export const FBRegex = /(?:https?\:\/\/)?(?:www\.)?facebook\.com\/events\/\d{10,20}\/?/ig;

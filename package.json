@@ -4,9 +4,10 @@
   "description": "a messenger bot for muslim events",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./build/bundle.js",
+    "start": "node -r dotenv/config ./build/bundle.js",
     "now": "now remove muslimbot --safe && now",
     "build": "webpack --config webpack.js -p",
+    "go": "yarn build && yarn start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,10 +15,12 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cron": "^1.5.0",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mailgun-js": "^0.22.0",
     "moment": "^2.22.2",
     "node-fetch": "^2.2.0",
-    "nodemailer": "^4.6.8",
     "query-string": "^6.2.0",
     "request": "^2.88.0"
   },

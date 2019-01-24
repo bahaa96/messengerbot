@@ -1,7 +1,16 @@
 {
+  "version": 1,
+  "scale": {
+    "sfo1": {
+      "min": 1,
+      "max": 2
+    }
+  },
   "env": {
     "PAGE_ACCESS_TOKEN": "@page-access-token",
     "VERIFY_TOKEN": "@verify-token",
-    "AIRTABLE_API_KEY": "@airtable-api-token"
+    "AIRTABLE_API_KEY": "@airtable-api-token",
+    "MAILGUN_API_KEY": "@mailgun-api-key",
+    "MAILGUN_DOMAIN": "@mailgun-domain"
   }
 }

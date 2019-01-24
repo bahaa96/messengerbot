@@ -1,17 +1,36 @@
 import express from "express"
 import bodyParser from "body-parser"
 import {CronJob} from "cron"
-import {loadData} from "./scraper"
-import {setProfile, handlePostback, handleMessage} from "./api"
+import {loadData} from "./api"
+import sendEmail from "./mailer"
+import {renderEvents} from "./formatting"
+import {setProfile, handlePostback, handleMessage, createBroadcastMessage} from "./api"
+
+require('dotenv').config()
 
 const app = express()
 
 app.use(bodyParser.json()); // creates express http server
 
 
+// To send a message every minute for any testing purpose
+// replace the cron timing string with this
+// new CronJob("* * * * *", function() {
+
 // new CronJob("0 17 * * 4", function() {
-new CronJob("* * * * *", function() {
-  loadData()
+//   loadData().then(({nextWeek}) => {
+//     const message = renderEvents(nextWeek)
+//     createBroadcastMessage(message)
+//   }
+// }, null, true, 'America/Los_Angeles');
+
+
+new CronJob("0 11 * * 4", function() {
+  loadData().then(({nextWeek}) => {
+    sendEmail(nextWeek);
+  }).catch((e) => {
+    console.log(e.message);
+  })
 }, null, true, 'America/Los_Angeles');
 
 
